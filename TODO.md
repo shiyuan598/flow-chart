@@ -6,3 +6,7 @@
 * 拖拽预制节点，生成新节点
 * 画布的放大、缩小、平移
 * 导出流程图数据
+
+流程图例子：
+[AI机器学习平台](https://vue-jsplumb-editor-fangyang921017.vercel.app/#/index)
+[easy-flow](http://xiaoka2017.gitee.io/easy-flow/#?_blank)
