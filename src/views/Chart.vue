@@ -1,13 +1,16 @@
 <template>
     <div class="chart-container">
-        <flow-chart />
+        <node-list class="side" />
+        <flow-chart class="main" />
     </div>
 </template>
 <script>
-import FlowChart from "../components/FlowChart/Index.vue";
+import NodeList from "../components/node-list/Index.vue";
+import FlowChart from "../components/flow-chart/Index.vue";
 export default {
     name: "chart",
     components: {
+        NodeList,
         FlowChart
     }
 };
@@ -17,5 +20,12 @@ export default {
 .chart-container {
     height: 100%;
     width: 100%;
+    display: flex;
+    .sdie {
+        width: 200px;
+    }
+    .main {
+        width: calc(100% - 200px);
+    }
 }
 </style>

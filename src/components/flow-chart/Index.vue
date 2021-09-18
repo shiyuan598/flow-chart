@@ -101,8 +101,8 @@ $waitingColor: #909399;
 .flow-chart-container {
     position: relative;
     height: 100%;
-    width: 100%;
-    background-color: #f9f9f9;
+    // width: 100%;
+    border: 1px solid #eee;
 
     overflow: auto;
     padding: 30px;
