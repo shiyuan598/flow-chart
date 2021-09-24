@@ -24,7 +24,6 @@ export default {
     name: "flow-chart",
     data() {
         return {
-            data: null,
             jsPlumb: null,
             container: null,
             nodeList: null,
@@ -37,7 +36,6 @@ export default {
     },
     methods: {
         init() {
-            this.data = data;
             this.nodeList = data.nodeList;
             this.lineList = data.lineList;
             jsPlumb.ready(() => {
@@ -106,12 +104,12 @@ export default {
             }
             return icon;
         },
-        generateConnector({ from, to }) {
+        generateConnector({ from, to, label }) {
             this.jsPlumb.connect(
                 {
                     source: from,
                     target: to,
-                    label: "hahs"
+                    label: label
                 },
                 setting.jsplumbConnectOptions
             );
