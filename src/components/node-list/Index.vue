@@ -1,8 +1,8 @@
 <template>
     <div class="node-list-container">
         <draggable @end="end" @start="move">
-            <div class="node">数据接入</div>
-            <div class="node">接口调用</div>
+            <div class="node" nodeType="input">数据接入</div>
+            <div class="node" nodeType="api">接口调用</div>
         </draggable>
     </div>
 </template>
@@ -14,14 +14,6 @@ export default {
     name: "node-list",
     components: {
         draggable
-    },
-    data() {
-        return {
-            mousePosition: {
-                left: 0,
-                top: 0
-            }
-        };
     },
     created() {
         document.body.ondrop = function (event) {
@@ -35,20 +27,19 @@ export default {
         // 拖拽开始时触发
         move(evt) {
             // TODO:
-            var type = evt.item.attributes.type.nodeValue;
-            this.nodeMenu = this.getMenuByType(type);
+            console.info("添加预制节点--开始", evt);
             this.nodeMenu = {
                 name: "流程B-节点D",
                 type: "task",
                 left: "723px",
                 top: "215px",
                 icon: "el-icon-present",
-                state: "running"
+                state: "waiting"
             };
         },
         // 拖拽结束时触发
         end(evt) {
-            eventBus.$emit("addNode", evt, this.nodeMenu, this.mousePosition);
+            eventBus.$emit("addNode", evt, this.nodeMenu);
         }
     }
 };
